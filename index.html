@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formation Premiers Secours en Santé Mentale – Informations & Inscriptions</title>
+  <meta name="description" content="Page d'information claire, accessible et responsive pour la formation Premiers Secours en Santé Mentale (PSSM). Téléchargez le programme, repérez le lieu sur la carte et contactez ALB Formation." />
+
+  <!-- Palette accessible (fond blanc + touches violettes) -->
+  <style>
+    :root{
+      --bg: #ffffff;
+      --fg: #0b0b0c;
+      --muted: #5a5f73;
+      --brand: #7c3aed; /* violet PSSM */
+      --brand-contrast: #ffffff;
+      --border: #e5e7eb;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.08);
+      --maxw: 1080px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+
+    html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    body{margin:0; font-family:var(--font); color:var(--fg); background:var(--bg); line-height:1.6}
+    a{color:var(--brand); text-decoration: none}
+    a:focus, button:focus, summary:focus{outline: 3px solid #111827; outline-offset: 2px}
+    img{max-width:100%; height:auto; display:block}
+
+    .container{max-width:var(--maxw); margin-inline:auto; padding: clamp(16px, 3vw, 28px)}
+    .skip{position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip:focus{left:16px; top:16px; width:auto; height:auto; background:#fff; padding:8px 12px; border-radius:8px; box-shadow:var(--shadow)}
+
+    header{border-bottom:1px solid var(--border); background:linear-gradient(180deg, #fafaff, #ffffff)}
+    .hero{display:grid; gap:20px; grid-template-columns: 1.2fr .8fr; align-items:center}
+    .hero h1{font-size: clamp(28px, 4vw, 42px); margin: 0 0 8px}
+    .tag{display:inline-block; background:var(--brand); color:var(--brand-contrast); padding:.35rem .65rem; border-radius:999px; font-weight:600; font-size:.9rem}
+    .lead{font-size: clamp(1.05rem, 1.2vw, 1.2rem); color:var(--muted)}
+
+    .banner{border:1px solid var(--border); border-radius: var(--radius); overflow:hidden; box-shadow:var(--shadow)}
+    .meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; color:#111}
+    .meta > span{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid var(--border); border-radius:999px; background:#fff}
+
+    main{display:grid; gap:28px; margin-top:24px}
+    .downloads{display:flex; flex-wrap:wrap; gap:12px}
+    .btn{appearance:none; border:1px solid var(--border); background:#fff; color:var(--fg); padding:.8rem 1rem; border-radius:12px; font-weight:600; cursor:pointer; box-shadow:var(--shadow)}
+    .btn.primary{background:var(--brand); color:var(--brand-contrast); border-color:transparent}
+    .btn:disabled{opacity:.6; cursor:not-allowed}
+
+    /* Accordéon programme */
+    details{border:1px solid var(--border); border-radius:12px; padding: 10px 14px; background:#fff}
+    details + details{margin-top:10px}
+    summary{list-style:none; cursor:pointer; font-weight:700}
+    summary::-webkit-details-marker{display:none}
+    .module-desc{color:var(--muted); margin: 10px 0 0}
+    .module-list{margin: 10px 0 0 1.1rem}
+
+    /* Grilles */
+    .panel{border:1px solid var(--border); border-radius:12px; background:#fff; box-shadow:var(--shadow); padding:16px}
+    .grid{display:grid; gap:20px; grid-template-columns: 1fr 1fr}
+
+    footer{border-top:1px solid var(--border); margin-top: 24px; padding-top: 18px; color:var(--muted)}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr}
+    }
+    @media (prefers-reduced-motion: reduce){ *{scroll-behavior:auto; animation:none; transition:none} }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu principal</a>
+
+  <header>
+    <div class="container hero" role="banner">
+      <div>
+        <span class="tag" aria-label="Formation certifiante">Formation certifiante</span>
+        <h1 id="titre-formation">Formation Premiers Secours en Santé Mentale (PSSM)</h1>
+        <p class="lead" id="accroche">Une formation professionnelle claire, accessible et immédiatement opérationnelle. Téléchargez le programme, repérez le lieu et contactez-nous.</p>
+        <div class="meta" aria-label="Métadonnées de session">
+          <span id="dates"><strong>Dates :</strong> 13 & 14 octobre 2025</span>
+          <span id="lieu"><strong>Lieu :</strong> ALB Formation – 9 rue du Progrès, 44840 Les Sorinières</span>
+          <span id="format"><strong>Format :</strong> Inter-entreprises</span>
+        </div>
+        <div class="downloads" aria-label="Téléchargements">
+          <a class="btn primary" href="programme.pdf" download title="Télécharger le programme (PDF)">📄 Télécharger le programme (PDF)</a>
+        </div>
+      </div>
+      <figure class="banner" aria-label="Visuel de la formation">
+        <!-- Logos (fichiers à placer dans le dépôt GitHub) -->
+        <img src="logo-alb.png" alt="Logo ALB Formation" />
+      </figure>
+    </div>
+  </header>
+
+  <main id="contenu" class="container">
+    <!-- Programme en accordéon par modules/sessions -->
+    <section aria-labelledby="programme">
+      <h2 id="programme">Programme</h2>
+      <p class="module-desc">Organisation indicative sur 2 jours (4 demi-journées). Objectifs pédagogiques précisés pour chaque module.</p>
+
+      <details>
+        <summary>DJ1 – Introduction & bases PSSM (Sessions 1.1 & 1.2)</summary>
+        <ul class="module-list">
+          <li>Introduction à la santé mentale et aux interventions (facteurs, données clés, conséquences)</li>
+          <li>Cadre des Premiers Secours en Santé Mentale & plan d’action <strong>AERER</strong></li>
+          <li>Présentation de la dépression : signes/symptômes & pistes d’intervention</li>
+        </ul>
+        <p class="module-desc"><strong>Objectifs :</strong> identifier les représentations, connaître le cadre PSSM et le plan AERER, repérer les signes d’un trouble dépressif et orienter de manière adaptée.</p>
+      </details>
+
+      <details>
+        <summary>DJ2 – Dépression & crise suicidaire (Sessions 2.1 & 2.2)</summary>
+        <ul class="module-list">
+          <li>Plan d’action pour la dépression (mise en pratique du AERER)</li>
+          <li>Crise suicidaire : comprendre la situation et <em>assister</em> en sécurité</li>
+          <li>Présentation des troubles anxieux : signes/symptômes & interventions</li>
+        </ul>
+        <p class="module-desc"><strong>Objectifs :</strong> appliquer le plan d’action en situation de dépression, savoir aborder le risque suicidaire, reconnaître les troubles anxieux et adapter son aide.</p>
+      </details>
+
+      <details>
+        <summary>DJ3 – Troubles anxieux & traumatismes (Sessions 3.1 & 3.2)</summary>
+        <ul class="module-list">
+          <li>Plan d’action PSSM pour troubles anxieux, attaques de panique, chocs post‑traumatiques</li>
+          <li>Crises : attaque de panique (présentation → assister) ; après événement traumatique (présentation → assister)</li>
+          <li>Transition vers les troubles psychotiques : introduction</li>
+        </ul>
+        <p class="module-desc"><strong>Objectifs :</strong> consolider les repères d’intervention en crise anxieuse, sécuriser la personne, communiquer sans jugement, orienter vers les ressources adaptées.</p>
+      </details>
+
+      <details>
+        <summary>DJ4 – Psychoses, substances & situations critiques (Sessions 4.1 & 4.2)</summary>
+        <ul class="module-list">
+          <li>Plan d’action pour les troubles psychotiques ; crise psychotique sévère</li>
+          <li>Utilisation de substances : signes/symptômes, interventions, crise liée aux substances</li>
+          <li>Gestion d’agressivité & urgences médicales ; clôture (post‑test, QS)</li>
+        </ul>
+        <p class="module-desc"><strong>Objectifs :</strong> savoir réagir en contexte de psychose ou d’addictions, assurer sa sécurité et celle d’autrui, activer l’orientation vers l’aide professionnelle.</p>
+      </details>
+    </section>
+
+    <section class="grid" aria-label="Carte et contact">
+      <div class="panel" aria-labelledby="mapTitle">
+        <h2 id="mapTitle">Se rendre à la formation</h2>
+        <p class="module-desc">ALB Formation – 9 rue du Progrès, 44840 Les Sorinières</p>
+        <!-- Intégration Google Maps (iframe embed) -->
+        <div style="aspect-ratio: 16/9; border:1px solid var(--border); border-radius:12px; overflow:hidden">
+          <iframe
+            title="Carte Google Maps – ALB Formation"
+            width="100%" height="100%" style="border:0"
+            loading="lazy" allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=9%
